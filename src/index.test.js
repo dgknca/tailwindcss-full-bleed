@@ -49,11 +49,6 @@ it('should add the `bleed-border` utilities', () => {
         border-top: var(--tw-full-bleed-border-top-width) solid;
         border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
       }
-      .bleed-border-t {
-        --tw-full-bleed-border-top-width: 1px;
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
-        border-top: var(--tw-full-bleed-border-top-width) solid;
-      }
       .bleed-border-b {
         --tw-full-bleed-border-bottom-width: 1px;
         border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
@@ -63,6 +58,11 @@ it('should add the `bleed-border` utilities', () => {
         --tw-full-bleed-border-bottom-width: 4px;
         border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0;
         border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
+      }
+      .bleed-border-t {
+        --tw-full-bleed-border-top-width: 1px;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
+        border-top: var(--tw-full-bleed-border-top-width) solid;
       }
       .bleed-border-tl-8 {
         --tw-full-bleed-border-top-width: 8px;
@@ -80,14 +80,14 @@ it('should add the `bleed-{color}` utilities', () => {
 
   return run(config).then((result) => {
     expect(result.css).toMatchCss(String.raw`
-      .bleed-red-500 {
-        --tw-full-bleed-color: #ef4444;
-      }
       .bleed-amber-200 {
         --tw-full-bleed-color: #fde68a;
       }
       .bleed-amber-200\/50 {
         --tw-full-bleed-color: rgb(253 230 138 / 0.5);
+      }
+      .bleed-red-500 {
+        --tw-full-bleed-color: #ef4444;
       }
     `)
   })

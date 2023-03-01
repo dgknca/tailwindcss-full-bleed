@@ -4,6 +4,13 @@ const flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette').
 const toColorValue = require('tailwindcss/lib/util/toColorValue').default
 // const createUtilityPlugin = require('tailwindcss/lib/util/createUtilityPlugin').default
 
+// silence color deprecation warnings
+delete colors['lightBlue'];
+delete colors['warmGray'];
+delete colors['trueGray'];
+delete colors['coolGray'];
+delete colors['blueGray'];
+
 const fullBleed = plugin(
   function ({ matchUtilities, addDefaults, addUtilities, theme }) {
     addDefaults('bleed-bg', {

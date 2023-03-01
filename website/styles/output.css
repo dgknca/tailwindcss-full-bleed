@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
+! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -30,6 +30,7 @@
 2. Prevent adjustments of font size after orientation changes in iOS.
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
 */
 
 html {
@@ -44,6 +45,8 @@ html {
   /* 3 */
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
 }
 
 /*
@@ -410,57 +413,13 @@ video {
   height: auto;
 }
 
-*, ::before, ::after {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-full-bleed-color: #e5e5e5;
-  --tw-full-bleed-border-top-width: 1px;
-  --tw-full-bleed-border-bottom-width: 1px;
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
 }
 
-::-webkit-backdrop {
+*, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -570,16 +529,16 @@ video {
   margin-bottom: 6rem;
 }
 
-.mb-5 {
-  margin-bottom: 1.25rem;
+.mb-16 {
+  margin-bottom: 4rem;
 }
 
 .mb-20 {
   margin-bottom: 5rem;
 }
 
-.mb-16 {
-  margin-bottom: 4rem;
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .flex {
@@ -608,14 +567,14 @@ video {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 .bg-slate-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .p-9 {
@@ -635,11 +594,6 @@ video {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -650,12 +604,17 @@ video {
   line-height: 1.25rem;
 }
 
-.font-semibold {
-  font-weight: 600;
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-medium {
   font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .text-blue-600 {
@@ -664,8 +623,7 @@ video {
 }
 
 .underline {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .bleed-bg {
@@ -683,24 +641,24 @@ video {
      border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 0 0 100vw;
 }
 
-.bleed-red-200 {
-  --tw-full-bleed-color: #fecaca;
+.bleed-\[\#bbf7d0\] {
+  --tw-full-bleed-color: #bbf7d0;
+}
+
+.bleed-amber-500 {
+  --tw-full-bleed-color: #f59e0b;
 }
 
 .bleed-blue-200 {
   --tw-full-bleed-color: #bfdbfe;
 }
 
-.bleed-\[\#bbf7d0\] {
-  --tw-full-bleed-color: #bbf7d0;
+.bleed-green-500 {
+  --tw-full-bleed-color: #22c55e;
 }
 
 .bleed-indigo-500 {
   --tw-full-bleed-color: #6366f1;
-}
-
-.bleed-amber-500 {
-  --tw-full-bleed-color: #f59e0b;
 }
 
 .bleed-lime-500 {
@@ -711,12 +669,12 @@ video {
   --tw-full-bleed-color: #ec4899;
 }
 
-.bleed-yellow-500 {
-  --tw-full-bleed-color: #eab308;
+.bleed-red-200 {
+  --tw-full-bleed-color: #fecaca;
 }
 
-.bleed-green-500 {
-  --tw-full-bleed-color: #22c55e;
+.bleed-yellow-500 {
+  --tw-full-bleed-color: #eab308;
 }
 
 .bleed-border {
@@ -728,12 +686,24 @@ video {
   border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
 }
 
-.bleed-border-r-4 {
-  --tw-full-bleed-border-top-width: 4px;
+.bleed-border-b-2 {
+  --tw-full-bleed-border-bottom-width: 2px;
+  -o-border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
+     border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
+  border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
+}
+
+.bleed-border-bl-4 {
+  --tw-full-bleed-border-bottom-width: 4px;
+  -o-border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 100vw;
+     border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 100vw;
+  border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
+}
+
+.bleed-border-br-4 {
   --tw-full-bleed-border-bottom-width: 4px;
   -o-border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0;
      border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0;
-  border-top: var(--tw-full-bleed-border-top-width) solid;
   border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
 }
 
@@ -742,6 +712,15 @@ video {
   --tw-full-bleed-border-bottom-width: 2px;
   -o-border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 100vw;
      border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 100vw;
+  border-top: var(--tw-full-bleed-border-top-width) solid;
+  border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
+}
+
+.bleed-border-r-4 {
+  --tw-full-bleed-border-top-width: 4px;
+  --tw-full-bleed-border-bottom-width: 4px;
+  -o-border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0;
+     border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0;
   border-top: var(--tw-full-bleed-border-top-width) solid;
   border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
 }
@@ -765,27 +744,6 @@ video {
   -o-border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0;
      border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0;
   border-top: var(--tw-full-bleed-border-top-width) solid;
-}
-
-.bleed-border-b-2 {
-  --tw-full-bleed-border-bottom-width: 2px;
-  -o-border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
-     border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
-  border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
-}
-
-.bleed-border-bl-4 {
-  --tw-full-bleed-border-bottom-width: 4px;
-  -o-border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 100vw;
-     border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 100vw;
-  border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
-}
-
-.bleed-border-br-4 {
-  --tw-full-bleed-border-bottom-width: 4px;
-  -o-border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0;
-     border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0;
-  border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
 }
 
 .hover\:text-blue-400:hover {
