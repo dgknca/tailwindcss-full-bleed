@@ -2,27 +2,15 @@ const plugin = require('tailwindcss/plugin')
 const flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette').default
 const toColorValue = require('tailwindcss/lib/util/toColorValue').default
 
-const fullBleed = plugin(function ({ matchUtilities, addDefaults, addUtilities, theme }) {
-  addDefaults('bleed-bg', {
-    '--tw-full-bleed-color': 'theme(colors.neutral.200)',
-  })
-
-  addDefaults('bleed-border', {
-    '--tw-full-bleed-border-top-width': '1px',
-    '--tw-full-bleed-border-bottom-width': '1px',
-  })
-
+const fullBleed = plugin(function ({ matchUtilities, addUtilities, theme }) {
   addUtilities({
     '.bleed-bg': {
-      '@defaults bleed-bg': {},
       'border-image': 'linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 100vw 0 100vw',
     },
     '.bleed-bg-r': {
-      '@defaults bleed-bg': {},
       'border-image': 'linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 100vw 0 0',
     },
     '.bleed-bg-l': {
-      '@defaults bleed-bg': {},
       'border-image': 'linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 0 0 100vw',
     },
     '.bleed-none': {
@@ -52,7 +40,6 @@ const fullBleed = plugin(function ({ matchUtilities, addDefaults, addUtilities, 
     [
       'bleed-border',
       [
-        ['@defaults bleed-border', {}],
         '--tw-full-bleed-border-top-width',
         '--tw-full-bleed-border-bottom-width',
         ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw'],
@@ -64,7 +51,6 @@ const fullBleed = plugin(function ({ matchUtilities, addDefaults, addUtilities, 
       [
         'bleed-border-t',
         [
-          ['@defaults bleed-border', {}],
           '--tw-full-bleed-border-top-width',
           ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw'],
           ['border-top', 'var(--tw-full-bleed-border-top-width) solid'],
@@ -73,7 +59,6 @@ const fullBleed = plugin(function ({ matchUtilities, addDefaults, addUtilities, 
       [
         'bleed-border-b',
         [
-          ['@defaults bleed-border', {}],
           '--tw-full-bleed-border-bottom-width',
           ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw'],
           ['border-bottom', 'var(--tw-full-bleed-border-bottom-width) solid'],
@@ -82,7 +67,6 @@ const fullBleed = plugin(function ({ matchUtilities, addDefaults, addUtilities, 
       [
         'bleed-border-r',
         [
-          ['@defaults bleed-border', {}],
           '--tw-full-bleed-border-top-width',
           '--tw-full-bleed-border-bottom-width',
           ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0'],
@@ -93,7 +77,6 @@ const fullBleed = plugin(function ({ matchUtilities, addDefaults, addUtilities, 
       [
         'bleed-border-l',
         [
-          ['@defaults bleed-border', {}],
           '--tw-full-bleed-border-top-width',
           '--tw-full-bleed-border-bottom-width',
           ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 100vw'],
@@ -104,7 +87,6 @@ const fullBleed = plugin(function ({ matchUtilities, addDefaults, addUtilities, 
       [
         'bleed-border-tl',
         [
-          ['@defaults bleed-border', {}],
           '--tw-full-bleed-border-top-width',
           ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 100vw'],
           ['border-top', 'var(--tw-full-bleed-border-top-width) solid'],
@@ -113,7 +95,6 @@ const fullBleed = plugin(function ({ matchUtilities, addDefaults, addUtilities, 
       [
         'bleed-border-tr',
         [
-          ['@defaults bleed-border', {}],
           '--tw-full-bleed-border-top-width',
           ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0'],
           ['border-top', 'var(--tw-full-bleed-border-top-width) solid'],
@@ -122,7 +103,6 @@ const fullBleed = plugin(function ({ matchUtilities, addDefaults, addUtilities, 
       [
         'bleed-border-bl',
         [
-          ['@defaults bleed-border', {}],
           '--tw-full-bleed-border-bottom-width',
           ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 100vw'],
           ['border-bottom', 'var(--tw-full-bleed-border-bottom-width) solid'],
@@ -131,7 +111,6 @@ const fullBleed = plugin(function ({ matchUtilities, addDefaults, addUtilities, 
       [
         'bleed-border-br',
         [
-          ['@defaults bleed-border', {}],
           '--tw-full-bleed-border-bottom-width',
           ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0'],
           ['border-bottom', 'var(--tw-full-bleed-border-bottom-width) solid'],
@@ -156,7 +135,6 @@ const fullBleed = plugin(function ({ matchUtilities, addDefaults, addUtilities, 
                 if (Array.isArray(name)) {
                   return Object.assign(obj, { [name[0]]: name[1] })
                 }
-                // return Object.assign(obj, { [name]: transformValue(value) })
                 return Object.assign(obj, { [name]: value })
               }, {})
             },
