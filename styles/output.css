@@ -464,9 +464,6 @@ video {
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
-  --tw-full-bleed-color: #e5e5e5;
-  --tw-full-bleed-border-top-width: 1px;
-  --tw-full-bleed-border-bottom-width: 1px;
 }
 
 ::backdrop {
@@ -514,9 +511,6 @@ video {
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
-  --tw-full-bleed-color: #e5e5e5;
-  --tw-full-bleed-border-top-width: 1px;
-  --tw-full-bleed-border-bottom-width: 1px;
 }
 
 .mx-auto {
