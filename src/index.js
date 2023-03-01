@@ -1,15 +1,6 @@
 const plugin = require('tailwindcss/plugin')
-const colors = require('tailwindcss/colors')
 const flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette').default
 const toColorValue = require('tailwindcss/lib/util/toColorValue').default
-// const createUtilityPlugin = require('tailwindcss/lib/util/createUtilityPlugin').default
-
-// silence color deprecation warnings
-delete colors['lightBlue'];
-delete colors['warmGray'];
-delete colors['trueGray'];
-delete colors['coolGray'];
-delete colors['blueGray'];
 
 const fullBleed = plugin(
   function ({ matchUtilities, addDefaults, addUtilities, theme }) {
@@ -49,7 +40,10 @@ const fullBleed = plugin(
           return { '--tw-full-bleed-color': toColorValue(value) }
         },
       },
-      { values: flattenColorPalette(theme('bleedColor')), type: ['color'] }
+      { values: flattenColorPalette({
+        ...theme('colors'),
+        ...theme('bleedColors'),
+      }), type: ['color'] }
     )
 
     const bleedBorderUtilityVariations = [
@@ -143,11 +137,6 @@ const fullBleed = plugin(
       ]
     ]
 
-    /* TODO: the imported function from 'tailwindcss/lib/util' below is not working, so I had to move the function here and tweak a bit. if you can make it work, please create a PR
-
-      createUtilityPlugin('bleedBorder', bleedBorderUtilityVariations, {type: ['length']})
-    */
-
     const createUtilityPlugin = (themeKey, utilityVariations = [[themeKey, [themeKey]]], { filterDefault = false, ...options }  = {}) => {
       for (let utilityVariation of utilityVariations) {
         let group = Array.isArray(utilityVariation[0]) ? utilityVariation : [utilityVariation]
@@ -168,32 +157,16 @@ const fullBleed = plugin(
           }, {}),
           {
             ...options,
-            values: filterDefault
-              ? Object.fromEntries(
-                  Object.entries(theme(themeKey) ?? {}).filter(([modifier]) => modifier !== 'DEFAULT')
-                )
-              : theme(themeKey),
           }
         )
       }
     }
 
-    createUtilityPlugin('bleedBorder', bleedBorderUtilityVariations, { type: ['length'] })
-
+    createUtilityPlugin('bleedBorderWidth', bleedBorderUtilityVariations, { values: {
+      ...theme('borderWidth'),
+      ...theme('bleedBorderWidth'),
+    }, type: ['length'] })
   },
-  {
-    theme: {
-      bleedBorder: {
-        DEFAULT: '1px',
-        2: '2px',
-        4: '4px',
-        8: '8px',
-      },
-      bleedColor: {
-        ...colors
-      }
-    },
-  }
 )
 
 module.exports = fullBleed
