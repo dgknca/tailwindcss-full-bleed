@@ -37,7 +37,9 @@ it('should add the `bleed-bg` utilities', () => {
 
 it('should add the `bleed-{color}` utilities', () => {
   const config = {
-    content: [{ raw: String.raw`<div class="bleed-red-500 bleed-amber-200 bleed-amber-200/50"></div>` }],
+    content: [
+      { raw: String.raw`<div class="bleed-red-500 bleed-amber-200 bleed-amber-200/50"></div>` },
+    ],
   }
 
   return run(config).then((result) => {
@@ -62,11 +64,11 @@ it('should accept theme variables for bleed-{color} utilities from `colors`', ()
       extend: {
         colors: {
           primary: {
-            DEFAULT: '#4f46e5'
-          }
-        }
-      }
-    }
+            DEFAULT: '#4f46e5',
+          },
+        },
+      },
+    },
   }
 
   return run(config).then((result) => {
@@ -85,11 +87,11 @@ it('should accept theme variables for bleed-{color} utilities from `bleedColor`'
       extend: {
         bleedColors: {
           primary: {
-            DEFAULT: '#4f46e5'
-          }
-        }
-      }
-    }
+            DEFAULT: '#4f46e5',
+          },
+        },
+      },
+    },
   }
 
   return run(config).then((result) => {
@@ -108,17 +110,17 @@ it('should override `colors` with `bleedColors`', () => {
       extend: {
         colors: {
           primary: {
-            DEFAULT: '#4f46e5'
+            DEFAULT: '#4f46e5',
           },
           secondary: '#000',
         },
         bleedColors: {
           primary: {
-            DEFAULT: '#ff0000'
+            DEFAULT: '#ff0000',
           },
         },
-      }
-    }
+      },
+    },
   }
 
   return run(config).then((result) => {
@@ -135,7 +137,11 @@ it('should override `colors` with `bleedColors`', () => {
 
 it('should add the `bleed-border` utilities', () => {
   const config = {
-    content: [{ raw: String.raw`<div class="bleed-border bleed-border-t bleed-border-b bleed-border-br-4 bleed-border-tl-8"></div>` }],
+    content: [
+      {
+        raw: String.raw`<div class="bleed-border bleed-border-t bleed-border-b bleed-border-br-4 bleed-border-tl-8"></div>`,
+      },
+    ],
   }
 
   return run(config).then((result) => {
@@ -173,15 +179,17 @@ it('should add the `bleed-border` utilities', () => {
 
 it('should accept theme variables for `bleed-border-{borderWidth}` utilities from `borderWidth`', () => {
   const config = {
-    content: [{ raw: String.raw`<div class="bleed-border-2 bleed-border-13 bleed-border-t-22"></div>` }],
+    content: [
+      { raw: String.raw`<div class="bleed-border-2 bleed-border-13 bleed-border-t-22"></div>` },
+    ],
     theme: {
       extend: {
         borderWidth: {
           13: '13px',
-          22: '5em'
-        }
-      }
-    }
+          22: '5em',
+        },
+      },
+    },
   }
 
   return run(config).then((result) => {
@@ -217,8 +225,8 @@ it('should accept theme variables for `bleed-border-{borderWidth}` utilities fro
         bleedBorderWidth: {
           17: '17px',
         },
-      }
-    }
+      },
+    },
   }
 
   return run(config).then((result) => {
@@ -246,8 +254,8 @@ it('should override `borderWidth` with `bleedBorderWidth`', () => {
         bleedBorderWidth: {
           sm: '4px',
         },
-      }
-    }
+      },
+    },
   }
 
   return run(config).then((result) => {
@@ -277,9 +285,9 @@ it('should not affect borderWidth utilities', () => {
       extend: {
         borderWidth: {
           13: '13px',
-        }
-      }
-    }
+        },
+      },
+    },
   }
 
   return run(config).then((result) => {

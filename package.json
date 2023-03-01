@@ -17,7 +17,8 @@
   "scripts": {
     "test": "jest",
     "dev": "yarn tailwindcss -c ./website/tailwind.config.js -i ./website/styles/style.css -o ./website/styles/output.css --watch",
-    "deploy": "gh-pages -d website"
+    "deploy": "gh-pages -d website",
+    "format": "prettier -w '**/*.{js,ts,json}'"
   },
   "devDependencies": {
     "gh-pages": "^5.0.0",
