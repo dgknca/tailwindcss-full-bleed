@@ -5,13 +5,13 @@ const toColorValue = require('tailwindcss/lib/util/toColorValue').default
 const fullBleed = plugin(function ({ matchUtilities, addUtilities, theme }) {
   addUtilities({
     '.bleed-bg': {
-      'border-image': 'linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 100vw 0 100vw',
+      'border-image': 'linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 9999vw 0 9999vw',
     },
     '.bleed-bg-r': {
-      'border-image': 'linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 100vw 0 0',
+      'border-image': 'linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 9999vw 0 0',
     },
     '.bleed-bg-l': {
-      'border-image': 'linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 0 0 100vw',
+      'border-image': 'linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 0 0 9999vw',
     },
     '.bleed-none': {
       '--tw-full-bleed-border-top-width': '0px',
@@ -42,7 +42,7 @@ const fullBleed = plugin(function ({ matchUtilities, addUtilities, theme }) {
       [
         '--tw-full-bleed-border-top-width',
         '--tw-full-bleed-border-bottom-width',
-        ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw'],
+        ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 9999vw'],
         ['border-top', 'var(--tw-full-bleed-border-top-width) solid'],
         ['border-bottom', 'var(--tw-full-bleed-border-bottom-width) solid'],
       ],
@@ -52,7 +52,7 @@ const fullBleed = plugin(function ({ matchUtilities, addUtilities, theme }) {
         'bleed-border-t',
         [
           '--tw-full-bleed-border-top-width',
-          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw'],
+          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 9999vw'],
           ['border-top', 'var(--tw-full-bleed-border-top-width) solid'],
         ],
       ],
@@ -60,7 +60,7 @@ const fullBleed = plugin(function ({ matchUtilities, addUtilities, theme }) {
         'bleed-border-b',
         [
           '--tw-full-bleed-border-bottom-width',
-          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw'],
+          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 9999vw'],
           ['border-bottom', 'var(--tw-full-bleed-border-bottom-width) solid'],
         ],
       ],
@@ -69,7 +69,7 @@ const fullBleed = plugin(function ({ matchUtilities, addUtilities, theme }) {
         [
           '--tw-full-bleed-border-top-width',
           '--tw-full-bleed-border-bottom-width',
-          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0'],
+          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 0'],
           ['border-top', 'var(--tw-full-bleed-border-top-width) solid'],
           ['border-bottom', 'var(--tw-full-bleed-border-bottom-width) solid'],
         ],
@@ -79,7 +79,7 @@ const fullBleed = plugin(function ({ matchUtilities, addUtilities, theme }) {
         [
           '--tw-full-bleed-border-top-width',
           '--tw-full-bleed-border-bottom-width',
-          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 100vw'],
+          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 9999vw'],
           ['border-top', 'var(--tw-full-bleed-border-top-width) solid'],
           ['border-bottom', 'var(--tw-full-bleed-border-bottom-width) solid'],
         ],
@@ -88,7 +88,7 @@ const fullBleed = plugin(function ({ matchUtilities, addUtilities, theme }) {
         'bleed-border-tl',
         [
           '--tw-full-bleed-border-top-width',
-          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 100vw'],
+          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 9999vw'],
           ['border-top', 'var(--tw-full-bleed-border-top-width) solid'],
         ],
       ],
@@ -96,7 +96,7 @@ const fullBleed = plugin(function ({ matchUtilities, addUtilities, theme }) {
         'bleed-border-tr',
         [
           '--tw-full-bleed-border-top-width',
-          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0'],
+          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 0'],
           ['border-top', 'var(--tw-full-bleed-border-top-width) solid'],
         ],
       ],
@@ -104,7 +104,7 @@ const fullBleed = plugin(function ({ matchUtilities, addUtilities, theme }) {
         'bleed-border-bl',
         [
           '--tw-full-bleed-border-bottom-width',
-          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 100vw'],
+          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 9999vw'],
           ['border-bottom', 'var(--tw-full-bleed-border-bottom-width) solid'],
         ],
       ],
@@ -112,7 +112,7 @@ const fullBleed = plugin(function ({ matchUtilities, addUtilities, theme }) {
         'bleed-border-br',
         [
           '--tw-full-bleed-border-bottom-width',
-          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0'],
+          ['border-image', 'linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 0'],
           ['border-bottom', 'var(--tw-full-bleed-border-bottom-width) solid'],
         ],
       ],

@@ -23,13 +23,13 @@ it('should add the `bleed-bg` utilities', () => {
   return run(config).then((result) => {
     expect(result.css).toMatchCss(String.raw`
       .bleed-bg {
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 100vw 0 100vw;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 9999vw 0 9999vw;
       }
       .bleed-bg-r {
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 100vw 0 0;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 9999vw 0 0;
       }
       .bleed-bg-l {
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 0 0 100vw;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) fill 0/ /0 0 0 9999vw;
       }
     `)
   })
@@ -149,28 +149,28 @@ it('should add the `bleed-border` utilities', () => {
       .bleed-border {
         --tw-full-bleed-border-top-width: 1px;
         --tw-full-bleed-border-bottom-width: 1px;
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 9999vw;
         border-top: var(--tw-full-bleed-border-top-width) solid;
         border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
       }
       .bleed-border-b {
         --tw-full-bleed-border-bottom-width: 1px;
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 9999vw;
         border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
       }
       .bleed-border-br-4 {
         --tw-full-bleed-border-bottom-width: 4px;
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 0;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 0;
         border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
       }
       .bleed-border-t {
         --tw-full-bleed-border-top-width: 1px;
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 9999vw;
         border-top: var(--tw-full-bleed-border-top-width) solid;
       }
       .bleed-border-tl-8 {
         --tw-full-bleed-border-top-width: 8px;
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 100vw;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 0 0 9999vw;
         border-top: var(--tw-full-bleed-border-top-width) solid;
       }
     `)
@@ -197,20 +197,20 @@ it('should accept theme variables for `bleed-border-{borderWidth}` utilities fro
       .bleed-border-13 {
         --tw-full-bleed-border-top-width: 13px;
         --tw-full-bleed-border-bottom-width: 13px;
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 9999vw;
         border-top: var(--tw-full-bleed-border-top-width) solid;
         border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
       }
       .bleed-border-2 {
         --tw-full-bleed-border-top-width: 2px;
         --tw-full-bleed-border-bottom-width: 2px;
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 9999vw;
         border-top: var(--tw-full-bleed-border-top-width) solid;
         border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
       }
       .bleed-border-t-22 {
         --tw-full-bleed-border-top-width: 5em;
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 9999vw;
         border-top: var(--tw-full-bleed-border-top-width) solid;
       }
     `)
@@ -234,7 +234,7 @@ it('should accept theme variables for `bleed-border-{borderWidth}` utilities fro
       .bleed-border-17 {
         --tw-full-bleed-border-top-width: 17px;
         --tw-full-bleed-border-bottom-width: 17px;
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 9999vw;
         border-top: var(--tw-full-bleed-border-top-width) solid;
         border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
       }
@@ -263,14 +263,14 @@ it('should override `borderWidth` with `bleedBorderWidth`', () => {
       .bleed-border-lg {
         --tw-full-bleed-border-top-width: 8px;
         --tw-full-bleed-border-bottom-width: 8px;
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 9999vw;
         border-top: var(--tw-full-bleed-border-top-width) solid;
         border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
       }
       .bleed-border-sm {
         --tw-full-bleed-border-top-width: 4px;
         --tw-full-bleed-border-bottom-width: 4px;
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 9999vw;
         border-top: var(--tw-full-bleed-border-top-width) solid;
         border-bottom: var(--tw-full-bleed-border-bottom-width) solid;
       }
@@ -335,7 +335,7 @@ it('should generate arbitrary values', () => {
       }
       .bleed-border-t-\[1em\] {
         --tw-full-bleed-border-top-width: 1em;
-        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 100vw 0 100vw;
+        border-image: linear-gradient(var(--tw-full-bleed-color) 0 0) 1 / /0 9999vw 0 9999vw;
         border-top: var(--tw-full-bleed-border-top-width) solid;
       }
     `)
